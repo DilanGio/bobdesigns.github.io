@@ -1,0 +1,941 @@
+/* General */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: #f9f9f9;
+    color: #FFFFFF;
+    width: 100%; /* Asegura que el body ocupe el 100% del ancho */
+    height: 100vh; /* Asegura que el body ocupe todo el alto de la ventana */
+    box-sizing: border-box; /* Hace que los márgenes y el padding se incluyan dentro del tamaño total */
+    overflow-x: hidden; /* Previene desbordamientos horizontales */
+}
+
+/* Este cambio asegura que todos los elementos dentro del body no se salgan de la pantalla */
+*, *::before, *::after {
+    box-sizing: inherit; /* Hereda el box-sizing de body */
+}
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+button {
+    background: #00a8cc;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Header */
+header {
+	width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #082032;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 4rem;
+	padding-right: -5rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navigation ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+.navigation ul li a {
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s;
+}
+
+.navigation ul li a:hover {
+    background: #f0f0f0;
+    border-radius: 5px;
+}
+
+/* Estilos para la sección de Bienvenida */
+.welcome-section {
+	width: 100%;
+    background-color: #094074; /* Fondo azul */
+    color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInBackground 1s ease-out; /* Animación de fondo */
+}
+
+.welcome-section h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: white;
+    animation: fadeIn 1s ease-out; /* Animación de aparición */
+}
+
+.welcome-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+    color: white;
+    animation: fadeIn 1s ease-out; /* Animación de aparición */
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    animation: slideIn 1s ease-out; /* Animación de deslizamiento */
+}
+
+.hombre {
+    width: 50%;
+	left: 20%;
+	top:5%;
+    z-index: 3;  /* Prioridad visual más alta */
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-out; /* Animación de desvanecimiento y desplazamiento */
+}
+
+.imagendefondo {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    opacity: 0.3;  /* Difumina la imagen de fondo */
+    filter: blur(8px); /* Difumina la imagen para ponerla en segundo plano */
+    animation: fadeInBackground 1.5s ease-out; /* Animación del fondo difuso */
+}
+
+.computador {
+    width: 35%;
+    position: absolute;
+    right: 50%;
+    top: 5%;
+    z-index: 2;
+    opacity: 0.7; /* Reduce la opacidad para que no compita con la persona */
+    filter: blur(4px); /* Difumina ligeramente el computador */
+    transition: transform 0.5s ease-in-out;
+    animation: fadeInLeft 1.2s ease-out; /* Animación de entrada desde la izquierda */
+}
+
+.computador:hover {
+    transform: scale(1.05); /* Efecto de zoom en el computador */
+}
+
+.photoshop{
+	width: 25%;
+    position: absolute;
+    right: -3%;
+    top: -53%;
+    z-index: 2;
+    opacity: 0.7; /* Reduce la opacidad para que no compita con la persona */
+    filter: blur(4px); /* Difumina ligeramente el computador */
+    transition: transform 0.5s ease-in-out;
+    animation: fadeInLeft 1.2s ease-out; /* Animación de entrada desde la izquierda */
+	
+}
+
+
+.ilustrator{
+	width: 35%;
+    position: absolute;
+    right: 80%;
+    top: 66%;
+    z-index: 2;
+    opacity: 0.7; /* Reduce la opacidad para que no compita con la persona */
+    filter: blur(4px); /* Difumina ligeramente el computador */
+    transition: transform 0.5s ease-in-out;
+    animation: fadeInLeft 1.2s ease-out; /* Animación de entrada desde la izquierda */
+	
+}
+
+
+.aftereffects{
+	width: 14%;
+    position: absolute;
+    right: -1%;
+    top: 67%;
+	rotation: 2%;
+    z-index: 2;
+    opacity: 0.7; /* Reduce la opacidad para que no compita con la persona */
+    filter: blur(4px); /* Difumina ligeramente el computador */
+    transition: transform 0.5s ease-in-out;
+    animation: fadeInLeft 1.2s ease-out; /* Animación de entrada desde la izquierda */
+	
+}
+
+.disenador {
+    z-index: 4;
+    margin-top: 20%;
+	top:5%;
+    padding: 1rem;
+    text-align: left;
+    color: #fff;
+    animation: fadeInUp 1.5s ease-out; /* Animación de desvanecimiento y desplazamiento */
+}
+
+.disenador h2 {
+	font-size: 3rem;
+	margin-top:  9rem;
+	margin-left: -55rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.disenador h3 {
+	font-size: 5rem;
+	margin-left: -55rem;
+    margin-bottom: 1rem;
+}
+
+.description {
+    font-size: 1.5rem;
+	margin-left: -55rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-contactoinicio {
+    padding: 0.8rem 2rem;
+    background-color: #001B2D; /* Amarillo brillante */
+    color: #FFFFFF;
+    font-size: 1.2rem;
+	margin-left: -55rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: fadeIn 1.5s ease-out; /* Animación de desvanecimiento del botón */
+}
+
+.btn-contactoinicio:hover {
+    background-color: #006395; /* Amarillo más oscuro en hover */
+}
+
+/* Animaciones */
+@keyframes fadeInBackground {
+    0% { opacity: 0; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+    0% { opacity: 0; transform: translateX(30px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+
+
+    .disenador h2 {
+        font-size: 2rem;
+    }
+
+    .disenador h3 {
+        font-size: 1.5rem;
+    }
+
+    .btn-contacto {
+        font-size: 1rem;
+        padding: 0.7rem 1.5rem;
+    }
+
+
+
+/* Portfolio Section */
+.miportafolio {
+	width: 103%;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background: #f9fafc; /* Color claro para diferenciar del resto */
+    color: #1e1e1e;
+    border-top: 2px solid #eaeaea; /* Línea para delimitar la sección */
+}
+
+.miportafolio h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+    color: #094074; /* Color coherente con la paleta de la web */
+}
+
+.miportafolio p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.miportafolio .video {
+    margin: 2rem auto;
+    max-width: 40%; /* Un ancho más ajustado para mantener enfoque */
+    aspect-ratio: 9 / 16; /* Garantiza proporción de video */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombras más marcadas */
+}
+
+.miportafolio .video iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.miportafolio .btn-ver-mas {
+    background-color: #094074;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.miportafolio .btn-ver-mas:hover {
+    background-color: #063352;
+    transform: scale(1.05); /* Efecto de clic */
+}
+
+
+
+
+/* Sección Sobre Mí */
+.about-me-section {
+	width: 103%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #b4e7f2; /* Color base similar al de la referencia */
+    padding: 4rem 2rem;
+    color: #1e1e1e;
+}
+
+.about-me-content {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 2rem;
+}
+
+.about-me-content h3 {
+    font-size: 2rem;
+	margin-left: 4.5rem;
+    margin-bottom: -1.5rem;
+    color: #094074; /* Tono más oscuro para contraste */
+	
+}
+
+.about-me-content h4 {
+    font-size: 1.5rem;
+	margin-left: 4.5rem;
+    margin-bottom: 1rem;
+    color: #126782;
+}
+
+.about-me-content p {
+    font-size: 1rem;
+	margin-left: 4.5rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.cta-buttons button {
+    background-color: #094074;
+    color: #fff;
+    border: none;
+	margin-left: 4.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+
+
+.cta-buttons button:hover {
+    background-color: #063352;
+}
+
+/* Imágenes */
+.about-me-images {
+    flex: 1;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me-images img {
+    width: 45%;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-me-images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Sección de Servicios */
+.services-section {
+	width: 103%;
+    text-align: center;
+    background-color: #082032; /* Color similar al fondo de la imagen */
+    color: #fff;
+    padding: 4rem 1rem;
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor de servicios */
+.services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* Cada servicio */
+.service {
+    background-color: #334756; /* Contraste para las tarjetas */
+    border-radius: 15px;
+    padding: 2rem;
+    width: 20%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Imágenes dentro de los servicios */
+.service img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+/* Títulos y texto */
+.service h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #00a8cc; /* Azul para los títulos */
+}
+
+.service p {
+    font-size: 1rem;
+    color: #d6d6d6; /* Texto en gris claro */
+}
+
+/* Botón */
+.services-section button {
+    margin-top: 3rem;
+    background: #00a8cc;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.services-section button:hover {
+    background: #007b99;
+}
+
+
+
+
+/* Sección Contrátanos */
+.contratar-section {
+	width: 103%;
+    padding: 4rem 1rem;
+    text-align: center;
+    background: url('imagenes/fotoscentro.png') no-repeat center/cover;
+    color: #fff;
+}
+
+.contratar-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor de las tarjetas */
+.price-cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    flex-wrap: wrap; /* Para manejo en pantallas pequeñas */
+}
+
+/* Estilo de cada tarjeta */
+.price-card {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    width: 30%;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.price-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Títulos de las tarjetas */
+.price-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #082032;
+}
+
+/* Lista de servicios */
+.price-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.price-card ul li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+/* Botón */
+.price-card button {
+    background: #082032;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.price-card button:hover {
+    background: #0056b3;
+}
+
+
+
+
+
+
+
+/* Testimonios */
+.testimonials-section {
+	width: 103%;
+    padding: 4rem 1rem;
+    background: #082032;
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #FFFFFF;
+}
+
+.testimonials-section p {
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    margin-bottom: 3rem;
+}
+
+/* Contenedor de todos los testimonios */
+.testimonials-section .testimonials-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap; /* Para manejar mejor el diseño en pantallas pequeñas */
+}
+
+/* Estilo de cada testimonio */
+.testimonial {
+    background: #fff;
+    padding: 2rem;
+	margin: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 30%; /* Flexibilidad para ajustar tamaño en diferentes pantallas */
+    max-width: 400px; /* Tamaño máximo */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen del cliente */
+.testimonial img {
+    width: 150px; /* Tamaño de las fotos */
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 4px solid #082032;
+}
+
+/* Nombre del cliente */
+.testimonial h5 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #082032;
+    margin-bottom: 0.5rem;
+}
+
+/* Texto del testimonio */
+.testimonial p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+
+    .testimonial {
+        flex: 1 1 100%;
+        max-width: 30%;
+    }
+	
+	/* Estilo para la sección de contacto */
+.contact-section {
+	width: 103%;
+    background-color: #006d83; /* Fondo azul */
+    color: #ffffff; /* Texto blanco */
+    text-align: center;
+    padding: 3rem 1rem;
+    font-family: 'Arial', sans-serif; /* Fuente sencilla */
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.contact-section .description  {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 600px; /* Limita el ancho del texto */
+    margin: 0 auto 2rem auto; /* Centra el texto */
+}
+	
+	
+
+
+.contact-section .contact-actions {
+    margin-top: 2rem; /* Espaciado superior */
+}
+
+.contact-section .btn-contacto {
+    background-color: #FFFFFF; /* Color de botón */
+    color: black; /* Texto en negro */
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por el botón */
+    transition: background-color 0.3s ease; /* Efecto suave en hover */
+	
+}
+
+.contact-section .btn-contacto:hover {
+    background-color: #007684; /* Cambia de color al pasar el mouse */
+}
+
+/* Estilo para la sección del formulario */
+.formulario-section {
+	width: 103%;
+    background-color: #ffffff;
+    color: #333;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.formulario-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.form-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.btn-submit {
+    background-color: #008080;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+.btn-submit:hover {
+    background-color: #006666;
+}
+
+/* Estilo de los Datos de Contacto */
+.datosdecontacto {
+	width: 100%;
+	height: 300px;
+    background-color: #006d83; /* Fondo azul */
+    color: #ffffff; /* Texto blanco */
+    padding: 2rem;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 2rem;
+	margin: 0;
+}
+
+.datosdecontacto h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-item img {
+    width: 24px;
+    height: 24px;
+}
+
+.contact-item p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Estilo del Footer */
+footer {
+	width: 100%;
+    background-color: #082032; /* Fondo más oscuro */
+    color: #ffffff; /* Texto blanco */
+    height: 450px;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-family: 'Arial', sans-serif;
+	
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    width: 80px;
+    margin-bottom: 1rem;
+}
+
+footer h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+footer h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-icons a img {
+    width: 32px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+footer p {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    opacity: 0.8; /* Hace el texto más sutil */
+}
+
+	
+@media screen and (max-width:900px){
+	header{
+		display: block;
+	}
+	.disenador h2{
+		margin: 0;
+	}
+	.disenador h3 {
+		margin: 0;
+	}
+	.description {
+    margin-left: -24rem;
+    }
+	
+	.about-me-section {
+		display: block;
+		width: 100%;
+	}
+	.about-me-content {
+		max-width: 100%;
+	}
+	.services-container {
+		display: block;
+	}
+	.service{
+        flex-direction: column;
+		width: 80%;
+		margin: 0 auto;
+	}
+    
+     /* Sección Contrátanos */
+     .price-cards {
+        flex-direction: column;
+    }
+
+    .price-card {
+        width: 90%;
+    }
+     /* Testimonios */
+     .testimonials-section .testimonials-container {
+        flex-direction: column;
+        margin-left: 16px;
+        align-items: center;
+        width: 100%;
+
+    }
+
+    .testimonial {
+        width: 90%;
+    }
+
+}
+	
+	
+	
+	
+	
+	
